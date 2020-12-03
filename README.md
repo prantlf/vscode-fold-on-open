@@ -1,6 +1,6 @@
 # Fold on Open
 
-[![Logo](./logo.png | height=20px)][from the marketplace]
+[<img src=https://raw.githubusercontent.com/prantlf/vscode-fold-on-open/master/logo.png height=20 alt=Logo>][from the marketplace]
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 [![Build Status](https://github.com/prantlf/vscode-fold-on-open/workflows/Test/badge.svg)](https://github.com/prantlf/vscode-fold-on-open/actions)
 
