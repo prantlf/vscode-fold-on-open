@@ -1,0 +1,7 @@
+.git
+.github
+.vscode
+.editorconfig
+.eslintrc.json
+.gitignore
+jsconfig.json
