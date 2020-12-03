@@ -18,11 +18,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Install
-      run: |
-        curl -L https://unpkg.com/@pnpm/self-installer | node
-        pnpm config set store-dir ~/.pnpm-store
-        pnpm i --frozen-lockfile --no-verify-store-integrity
+      run: npm ci
     - name: Test
       run: |
-        pnpm test
-        pnpx vsce package
+        npm test
+        npx vsce package

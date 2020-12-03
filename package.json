@@ -1,11 +1,11 @@
 {
-	"name": "fold-on-open",
-	"displayName": "Fold on Open",
-	"description": "Folds comments or other targets in code files automatically when you open them.",
-	"version": "1.0.0",
-	"icon": "logo.png",
+  "name": "fold-on-open",
+  "displayName": "Fold on Open",
+  "description": "Folds comments or other targets in code files automatically when you open them.",
+  "version": "1.0.0",
+  "icon": "logo.png",
   "author": "Ferdinand Prantl <prantlf@gmail.com> (http://prantl.tk/)",
-	"license": "MIT",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/prantlf/vscode-fold-on-open.git"
@@ -13,37 +13,57 @@
   "homepage": "https://github.com/prantlf/vscode-fold-on-open#readme",
   "bugs": "https://github.com/prantlf/vscode-fold-on-open/issues",
   "keywords": [
-    "fold",
+    "vscode-extension",
     "fold-comments",
-    "vscode",
-    "vscode-extension"
+    "fold",
+    "comments",
+    "vscode"
   ],
   "publisher": "prantlf",
-	"engines": { "vscode": "^1.51.0" },
-	"categories": ["Other"],
-	"activationEvents": ["onStartupFinished"],
-	"main": "extension.js",
-	"contributes": {
-		"configuration": {
-			"title": "Fold on Open",
-			"type": "object",
-			"properties": {
-				"foldOnOpen.targets": {
-					"description": "Targets to fold when a file is opened. Leave it empty do disable the automatic folding.",
-					"type": "array",
-					"items": {
-						"description": "A target to fold when a file is opened.",
-						"type": "string",
-						"enum": [
-							"All", "AllBlockComments", "AllMarkerRegions", "Level1", "Level2",
-							"Level3", "Level4", "Level5", "Level6", "Level7", "Recursively"
-						]
-					},
-					"default": []
-				}
-			}
-		}
-	},
-	"scripts": { "test": "eslint ." },
-	"devDependencies": { "eslint": "7.14.0" }
+  "engines": {
+    "vscode": "^1.51.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Fold on Open",
+      "type": "object",
+      "properties": {
+        "foldOnOpen.targets": {
+          "description": "Targets to fold when a file is opened. Leave it empty do disable the automatic folding.",
+          "type": "array",
+          "items": {
+            "description": "A target to fold when a file is opened.",
+            "type": "string",
+            "enum": [
+              "All",
+              "AllBlockComments",
+              "AllMarkerRegions",
+              "Level1",
+              "Level2",
+              "Level3",
+              "Level4",
+              "Level5",
+              "Level6",
+              "Level7",
+              "Recursively"
+            ]
+          },
+          "default": []
+        }
+      }
+    }
+  },
+  "scripts": {
+    "test": "eslint ."
+  },
+  "devDependencies": {
+    "eslint": "7.14.0"
+  }
 }
