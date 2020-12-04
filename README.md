@@ -20,6 +20,19 @@ This extension contributes the following settings:
 
 * `foldOnOpen.targets`: Targets to fold when a file is opened. Leave it empty do disable the automatic folding. (array of strings, `[]` by default, valid values: `All`, `AllBlockComments`, `AllMarkerRegions`, `Level1`, `Level2`, `Level3`, `Level4`, `Level5`, `Level6`, `Level7`, `Recursively`)
 
+## Troubleshooting
+
+If the JSDoc comments are not folded, you can try disabling the [syntax-aware folding]:
+
+    "editor.foldingStrategy": "indentation"
+
+## License
+
+Copyright (c) 2020 Ferdinand Prantl
+
+Licensed under the MIT license.
+
 [Visual Studio Code]: https://code.visualstudio.com/
 [from the marketplace]: https://marketplace.visualstudio.com/items?itemName=prantlf.fold-on-open
 [released package]: https://github.com/prantlf/vscode-fold-on-open/releases
+[syntax-aware folding]: https://code.visualstudio.com/updates/v1_24#_syntax-aware-folding-enabled-by-default-for-jsts
