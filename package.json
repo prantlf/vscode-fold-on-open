@@ -2,8 +2,8 @@
   "name": "fold-on-open",
   "displayName": "Fold on Open",
   "description": "Folds comments or other targets in code files automatically when you open them.",
-  "version": "1.0.0",
-  "icon": "logo.png",
+  "version": "1.1.0",
+  "icon": "src/logo.png",
   "author": "Ferdinand Prantl <prantlf@gmail.com> (http://prantl.tk/)",
   "license": "MIT",
   "repository": {
@@ -29,14 +29,14 @@
   "activationEvents": [
     "onStartupFinished"
   ],
-  "main": "extension.js",
+  "main": "src/extension.js",
   "contributes": {
     "configuration": {
       "title": "Fold on Open",
       "type": "object",
       "properties": {
         "foldOnOpen.targets": {
-          "description": "Targets to fold when a file is opened. Leave it empty do disable the automatic folding.",
+          "description": "Targets to fold when a file is opened. Leave it empty to disable the automatic folding.",
           "type": "array",
           "items": {
             "description": "A target to fold when a file is opened.",
@@ -55,15 +55,59 @@
               "Recursively"
             ]
           },
-          "default": []
+          "default": [],
+          "scope": "language-overridable"
+        },
+        "foldOnOpen.enableFiles": {
+          "markdownDescription": "Enables the automatic folding for the specified file patterns only. Use the pattern syntax known from `#files.exclude#`, for example. The default is `[\"**/*\"]`, which means that the folding will be enabled for all files.",
+          "description": "Enables the automatic folding for the specified file patterns. Use the pattern syntax known from \"files.exclude\", for example. The default is [\"**/*\"], which means that the folding will be enabled for all files.",
+          "type": "array",
+          "items": {
+            "description": "A file pattern to enable the automatic folding for.",
+            "type": "string"
+          },
+          "default": [
+            "**/*"
+          ],
+          "scope": "language-overridable"
+        },
+        "foldOnOpen.disableFiles": {
+          "markdownDescription": "Disables the automatic folding for the specified file patterns. Use the pattern syntax known from `#files.exclude#`, for example. The default is empty, which means that the folding will be enabled for all files specified by `#foldOnOpen.enableFiles#`.",
+          "description": "Disables the automatic folding for the specified file patterns. Use the pattern syntax known from \"files.exclude\", for example. The default is empty, which means that the folding will be enabled for all files specified by \"foldOnOpen.enableFiles\".",
+          "type": "array",
+          "items": {
+            "description": "A file pattern to disable the automatic folding for.",
+            "type": "string"
+          },
+          "default": [],
+          "scope": "language-overridable"
         }
       }
     }
   },
   "scripts": {
-    "test": "eslint ."
+    "lint": "eslint --cache --max-warnings=0 .",
+    "check": "nyc --silent tape test/*.js | faucet && nyc report && nyc check-coverage",
+    "test": "npm run lint && npm run check"
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "branches": 100,
+    "statements": 100,
+    "functions": 100,
+    "lines": 100
   },
   "devDependencies": {
-    "eslint": "7.14.0"
+    "@prantlf/faucet": "0.0.2",
+    "eslint": "7.15.0",
+    "mock-require": "3.0.3",
+    "nyc": "15.1.0",
+    "tape": "5.0.1"
+  },
+  "dependencies": {
+    "micromatch": "4.0.2"
   }
 }
