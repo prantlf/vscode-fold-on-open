@@ -23,3 +23,5 @@ jobs:
       run: |
         npm test
         npx vsce package
+    - name: Post Coverage
+      run: npx codecov --disable=gcov

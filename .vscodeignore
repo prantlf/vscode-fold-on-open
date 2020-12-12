@@ -1,8 +1,11 @@
+.DS_Store
+.eslintcache
 .git
 .github
+.nyc_output
 .vscode
 .editorconfig
 .eslintrc.json
 .gitignore
+coverage
 jsconfig.json
-pnpm-lock.yaml
