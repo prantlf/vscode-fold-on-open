@@ -4,7 +4,7 @@
 
 New features added.
 
-* Introduce the `foldOnOpen.enableFiles` to enable the automatic folding for the specified file patterns.
+* Introduce the `foldOnOpen.enableFiles` to enable the automatic folding for the specified file patterns only.
 * Introduce the `foldOnOpen.disableFiles` to disable the automatic folding for the specified file patterns.
 * Add unit tests.
 

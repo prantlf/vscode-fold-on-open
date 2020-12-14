@@ -1,4 +1,4 @@
-# Fold on Open
+# Fold on Open for Visual Studio Code
 
 [<img src=https://raw.githubusercontent.com/prantlf/vscode-fold-on-open/master/src/logo.png height=20 alt=Logo>][from the marketplace]
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
@@ -32,7 +32,7 @@ If a file pattern starts with `/`, it will match file paths from the file system
 
 Settings can be applied either for all files:
 
-```cjson
+```jsonc
 // enable initial block comment folding everywhere except for tests
 "foldOnOpen.targets": ["AllBlockComments"],
 "foldOnOpen.disableFiles": ["**/test/**/*"]
@@ -40,7 +40,7 @@ Settings can be applied either for all files:
 
 or scoped for a particular language:
 
-```cjson
+```jsonc
 // enable initial block comment folding only for JavaScript files and
 // only in `src` directories in the project root
 "[javascript]": {
@@ -64,6 +64,8 @@ If the JSDoc comments are not folded, you can try disabling the [syntax-aware fo
 Copyright (c) 2020 Ferdinand Prantl
 
 Licensed under the MIT license.
+
+The logo was based on an [original icon](https://icon-icons.com/icon/fold/106402) published among [Octicons by GitHub](https://icon-icons.com/pack/Octicons/1524) under the [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) license. Thank you!
 
 [Visual Studio Code]: https://code.visualstudio.com/
 [from the marketplace]: https://marketplace.visualstudio.com/items?itemName=prantlf.fold-on-open
